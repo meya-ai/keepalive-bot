@@ -1,0 +1,17 @@
+name: keepalive
+states:
+    set_url:
+        component: meya.set
+        properties:
+            key: last_url
+            value: '{{ flow.url }}'
+            scope: bot
+    make_request:
+        component: make_request
+        properties:
+            url: '{{ flow.url }}'
+    set_last_run:
+        component: save_time
+        properties:
+            key: last_run
+            scope: bot

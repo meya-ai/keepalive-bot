@@ -1,0 +1,24 @@
+-   flow: help
+    intent: meya.keyword
+    settings:
+        keyword: help
+-   flow: keepalive
+    intent: meya.keyword
+    settings:
+        keyword: __keepalive__
+-   flow: manual_start
+    intent: meya.regex
+    settings:
+        pattern: ^get (?P<url>https?://.+)$
+-   flow: start
+    intent: meya.regex
+    settings:
+        pattern: ^start (?P<minutes>\d+) (?P<url>https?://.+)$
+-   flow: status
+    intent: meya.keyword
+    settings:
+        keyword: status
+-   flow: stop
+    intent: meya.keyword
+    settings:
+        keyword: stop

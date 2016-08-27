@@ -1,0 +1,24 @@
+name: status
+states:
+    equal_check_state:
+        component: meya.conditional_equal
+        properties:
+            value1: '{{ bot.running }}'
+            value2: 'on'
+        transitions:
+            equal: started
+            notequal: stopped
+    started:
+        component: meya.text
+        properties:
+            text: '✅ Running. Last: {{ bot.last_run }}'
+    url:
+        component: meya.text
+        properties:
+            text: '{{ bot.last_url }}'
+        return: true
+    stopped:
+        component: meya.text
+        properties:
+            text: ❌ Stopped
+        return: true

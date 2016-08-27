@@ -1,0 +1,19 @@
+name: help
+states:
+    first:
+        component: meya.text
+        properties:
+            text: '`start {minutes} {url}` start a periodic GET http request to the
+                url.'
+    second:
+        component: meya.text
+        properties:
+            text: '`get {url}` single GET http request to the url.'
+    third:
+        component: meya.text
+        properties:
+            text: '`status` Running status, last run, last url'
+    fourth:
+        component: meya.text
+        properties:
+            text: '`stop` Stop running the keepalive'

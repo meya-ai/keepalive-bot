@@ -13,6 +13,6 @@ class SaveTime(Component):
             'user': self.db.user,
             'bot': self.db.bot
         }[scope]
-        val = arrow.utcnow().to('US/Pacific').format("MMM. D @ H:mm ET")
+        val = arrow.utcnow().to('US/Eastern').format("MMM. D @ H:mm ET")
         db.set(key, val)
         return self.respond(action="next")

@@ -4,7 +4,7 @@ states:
         component: meya.schedule_stop
         properties:
             tag: keepalive
-    set_on:
+    set_off:
         component: meya.set
         properties:
             key: running
@@ -13,4 +13,4 @@ states:
     confirm:
         component: meya.text
         properties:
-            text: Keepalive successfully stopped.
+            text: Check successfully stopped.

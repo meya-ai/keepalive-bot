@@ -8,17 +8,22 @@ states:
         transitions:
             equal: started
             notequal: stopped
+    stopped:
+        component: meya.text
+        properties:
+            text: '❌ Stopped. Last: {{ bot.last_run }}'
+        transitions:
+            next: is_up
     started:
         component: meya.text
         properties:
             text: '✅ Running. Last: {{ bot.last_run }}'
+    is_up:
+        component: meya.text
+        properties:
+            text: '{{ bot.is_up }}'
     url:
         component: meya.text
         properties:
             text: '{{ bot.last_url }}'
-        return: true
-    stopped:
-        component: meya.text
-        properties:
-            text: ❌ Stopped
         return: true

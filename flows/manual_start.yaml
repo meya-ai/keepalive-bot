@@ -5,6 +5,6 @@ states:
         properties:
             text: GET {{ flow.url }}
     make_request:
-        flow: keepalive
+        flow: check
         data:
             url: '{{ flow.url }}'

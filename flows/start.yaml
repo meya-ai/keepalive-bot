@@ -11,7 +11,7 @@ states:
     already_started:
         component: meya.text
         properties:
-            text: The keepalive is already running.
+            text: The check is already running.
         return: true
     set_on:
         component: meya.set
@@ -22,15 +22,14 @@ states:
     starting:
         component: meya.text
         properties:
-            text: Starting {{ flow.minutes }} minute periodic keepalive on {{ flow.url
-                }}
+            text: Starting {{ flow.minutes }} minute check on {{ flow.url }}
         delay:
             relative: 0.1
     start:
         flow: meya.schedule
         data:
-            tag: keepalive
-            flow: keepalive
+            tag: check
+            flow: check
             data:
                 url: '{{ flow.url }}'
             period: minutes

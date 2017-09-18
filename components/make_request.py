@@ -4,7 +4,6 @@ from meya import Component
 
 
 class MakeRequest(Component):
-
     def start(self):
         try:
             response = requests.get(self.db.flow.get('url'), timeout=10)

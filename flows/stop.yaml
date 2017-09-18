@@ -1,16 +1,16 @@
 name: stop
 states:
-    stop_schedule_state:
-        component: meya.schedule_stop
-        properties:
-            tag: keepalive
-    set_off:
-        component: meya.set
-        properties:
-            key: running
-            value: 'off'
-            scope: bot
-    confirm:
-        component: meya.text
-        properties:
-            text: Check successfully stopped.
+  stop_schedule_state:
+    component: meya.schedule_stop
+    properties:
+      tag: keepalive
+  set_off:
+    component: meya.set
+    properties:
+      key: running
+      value: 'off'
+      scope: bot
+  confirm:
+    component: meya.text
+    properties:
+      text: Check successfully stopped.

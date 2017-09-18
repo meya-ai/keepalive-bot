@@ -1,10 +1,10 @@
 name: manual_start
 states:
-    first:
-        component: meya.text
-        properties:
-            text: GET {{ flow.url }}
-    make_request:
-        flow: check
-        data:
-            url: '{{ flow.url }}'
+  first:
+    component: meya.text
+    properties:
+      text: GET {{ flow.url }}
+  make_request:
+    flow: check
+    data:
+      url: '{{ flow.url }}'

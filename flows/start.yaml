@@ -1,36 +1,36 @@
 name: start
 states:
-    equal_check_state:
-        component: meya.conditional_equal
-        properties:
-            value1: '{{ bot.running }}'
-            value2: 'on'
-        transitions:
-            equal: already_started
-            notequal: set_on
-    already_started:
-        component: meya.text
-        properties:
-            text: The check is already running.
-        return: true
-    set_on:
-        component: meya.set
-        properties:
-            key: running
-            value: 'on'
-            scope: bot
-    starting:
-        component: meya.text
-        properties:
-            text: Starting {{ flow.minutes }} minute check on {{ flow.url }}
-        delay:
-            relative: 0.1
-    start:
-        flow: meya.schedule
-        data:
-            tag: check
-            flow: check
-            data:
-                url: '{{ flow.url }}'
-            period: minutes
-            interval: '{{ flow.minutes }}'
+  equal_check_state:
+    component: meya.conditional_equal
+    properties:
+      value1: '{{ bot.running }}'
+      value2: 'on'
+    transitions:
+      equal: already_started
+      notequal: set_on
+  already_started:
+    component: meya.text
+    properties:
+      text: The check is already running.
+    return: true
+  set_on:
+    component: meya.set
+    properties:
+      key: running
+      value: 'on'
+      scope: bot
+  starting:
+    component: meya.text
+    properties:
+      text: Starting {{ flow.minutes }} minute check on {{ flow.url }}
+    delay:
+      relative: 0.1
+  start:
+    flow: meya.schedule
+    data:
+      tag: check
+      flow: check
+      data:
+        url: '{{ flow.url }}'
+      period: minutes
+      interval: '{{ flow.minutes }}'

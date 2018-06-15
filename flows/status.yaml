@@ -1,4 +1,7 @@
-name: status
+triggers:
+  - type: meya.keyword
+    properties:
+        keyword: status
 states:
     equal_check_state:
         component: meya.conditional_equal
